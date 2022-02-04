@@ -2,10 +2,10 @@
 MIT License
 
 Copyright (C) 2017-2019, Paul Larsen
-Copyright (C) 2021 Awesome-RJ
-Copyright (c) 2021, Yūki • Black Knights Union, <https://github.com/Awesome-RJ/CutiepiiRobot>
+Copyright (C) 2021 T-O-B-I-I
+Copyright (c) 2021, AOGIRI, <https://github.com/T-O-B-I-I/Rem_Robot>
 
-This file is part of @TG_ROBOT (Telegram Bot)
+This file is part of @RemCutebot (Telegram Bot)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -45,6 +45,7 @@ from telegram.ext import CallbackContext, CommandHandler
 from telegram.ext.dispatcher import run_async
 from telegram.error import BadRequest
 from telegram.utils.helpers import escape_markdown, mention_html
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
     
 from TG_ROBOT import (
     DEV_USERS,
@@ -346,42 +347,7 @@ def info(update: Update, context: CallbackContext):
          text += "\n\nCo-Owner Of The Bot."
          disaster_level_present = True
 
-    if disaster_level_present:
-        text += ' [<a href="Rem bot access levels we call as "Disaster Levels"
 
-• Half Elf's 
-
-Developers who can access the bots server and can execute, modify bot code. Can also manage other Disasters
-
-
-• Divine Dragon
-
-Only one exists, bot owner. 
-Divine dragon has complete bot access, including bot admin-ship in chats Rem is at.
-
-
-• Oni
-
-Also called as Sudos super user access, can gban, manage disasters lower than them and are admins in Rem.
-
-
-• Reincarnated Human
-
-Also known as Support users, reincarnated humans have access to globally ban users across Rem.
-
-
-• Wild Beasts
-
-Wild beasts are fully immune to mute, ban, kicks etc.
-
-
-
-Disclaimer: 
-
-The disaster levels in Rem are there for troubleshooting, support, banning potential scammers.
-Report abuse or ask us more on these at @Rem_Support.">?</a>]'.format(
-            bot.username,
-        )
 
     try:
         user_member = chat.get_member(user.id)
@@ -407,6 +373,7 @@ buttons = [
 
     [
         InlineKeyboardButton(text="HEALTH",url=f"https://t.me/Rem_updates/31"),
+        InlineKeyboardButton(text="DISASTER",url=f"https://t.me/Rem_updates/12"),
     ],
 ]
 
